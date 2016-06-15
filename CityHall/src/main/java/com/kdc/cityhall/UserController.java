@@ -8,7 +8,6 @@ public class UserController {
 
 	@RequestMapping("/user/loginPage")
 	public String loginPage(){
-		System.out.println("SS");
 		return "/user/loginPage";
 	}
 	
