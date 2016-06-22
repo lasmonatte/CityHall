@@ -1,4 +1,4 @@
-package com.kdc.cityhall;
+package com.kdc.cityhall.common.service;
 
 import java.io.IOException;
 
