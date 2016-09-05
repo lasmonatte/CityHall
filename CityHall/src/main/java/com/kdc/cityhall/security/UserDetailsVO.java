@@ -1,4 +1,4 @@
-package com.kdc.cityhall.common.service;
+package com.kdc.cityhall.security;
 
 import java.util.Collection;
 
@@ -9,34 +9,38 @@ import org.springframework.security.core.userdetails.User;
 public class UserDetailsVO extends User {
 	private static final long serialVersionUID = SpringSecurityCoreVersion.SERIAL_VERSION_UID;
 
-//	String user_urlpath;
+	private String name;
+	private String position; 
 	
 	public UserDetailsVO(String username, String password, boolean enabled, boolean accountNonExpired,
 			boolean credentialsNonExpired, boolean accountNonLocked,
-//			Collection<? extends GrantedAuthority> authorities, String user_thumb) {
-			Collection<? extends GrantedAuthority> authorities) {
+			Collection<? extends GrantedAuthority> authorities, String name, String position) {
 		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+		this.name = name;
+		this.position = position;
 		// TODO Auto-generated constructor stub
-//		this.user_urlpath = user_thumb;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
-//	public String getUser_thumb() {
-//		return user_urlpath;
-//	}
-//
-//	public void setUser_thumb(String user_thumb) {
-//		this.user_urlpath = user_thumb;
-//	}
-	
-//	@Override
-//	public String toString() {
-//		// TODO Auto-generated method stub
-//		return super.toString() + "; user_urlpath: " + this.user_urlpath;
-//	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return super.toString()+ "; name: " + this.name + "; position: " + this.position;
 	}
 
 }

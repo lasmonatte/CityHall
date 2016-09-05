@@ -10,8 +10,8 @@
 </head>
 <body>
 	<form action="../user/login" method="post">
- 		<input type="text" name="email" id="email"/>
- 		<input type="password" name="passwd" id="passwd"/>
+ 		<input type="text" name="id" id="id"/>
+ 		<input type="password" name="password" id="password"/>
  		<input type="submit" value="완료">
 	</form>
 	

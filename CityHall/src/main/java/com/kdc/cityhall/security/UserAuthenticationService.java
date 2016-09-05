@@ -1,4 +1,4 @@
-package com.kdc.cityhall.common.service;
+package com.kdc.cityhall.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,16 +26,14 @@ public class UserAuthenticationService implements UserDetailsService {
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		Map<String, Object> user = sqlSession.selectOne("com.kdc.cityhall.user.loginUser", username);
+		Map<String, Object> user = sqlSession.selectOne("kdc.user.loginUser", username);
 		if(user == null ) throw new UsernameNotFoundException(username);
-
+		
 		List<GrantedAuthority> gas = new ArrayList<GrantedAuthority>();
 		gas.add(new SimpleGrantedAuthority(user.get("authority").toString()));
 		return new UserDetailsVO(user.get("username").toString(), user.get("password").toString(), user.get("enabled").equals(true),
-				true, true, true, gas);
-//				true, true, true, gas, user.get("user_urlpath").toString());
-
-
+				true, true, true, gas, user.get("name").toString(), user.get("position").toString());
+		
 	}
 }
 

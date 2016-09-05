@@ -1,4 +1,4 @@
-package com.kdc.cityhall.common.service;
+package com.kdc.cityhall.security;
 
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler{
 			logger.info(s.isNativeMethod()+"");
 		}
 		req.setAttribute("errMsg",auth.getMessage());
-		req.getRequestDispatcher("/WEB-INF/views/user/loginPage.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/user/login.jsp").forward(req, resp);
 
 	}
 }

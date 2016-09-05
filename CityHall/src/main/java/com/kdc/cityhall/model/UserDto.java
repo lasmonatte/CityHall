@@ -1,4 +1,4 @@
-package com.kdc.cityhall.user.model;
+package com.kdc.cityhall.model;
 
 import java.sql.Timestamp;
 
@@ -9,6 +9,7 @@ public class UserDto{
 	private int num;
 	private String id;
 	private String password;
+	private String authorities;
 	private String name;
 	private String dept;
 	private String position;
@@ -36,6 +37,12 @@ public class UserDto{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getAuthorities() {
+		return authorities;
+	}
+	public void setAuthorities(String authorities) {
+		this.authorities = authorities;
 	}
 	public String getName() {
 		return name;
@@ -92,5 +99,4 @@ public class UserDto{
 		this.latest_date = latest_date;
 	}
 
-	
 }

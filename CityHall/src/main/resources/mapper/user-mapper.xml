@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.user">
+	
+	<!-- CRUD USER -->
+	<insert id="createUser" parameterType="UserDto">
+		insert into user(id, password, name, dept, position, phone, email, address)
+		values (#{id}, #{password}, #{name}, #{dept}, #{position}, #{phone}, #{email}, #{address})
+	</insert>
+	<select id="readUser" parameterType="String" resultType="UserDto">
+		select * from user
+		where id=#{id}	
+	</select>
+	<update id="updateUser" parameterType="UserDto">
+		update user set password=#{password}, name=#{name}, dept=#{dept},
+		phone=#{phone}, position=#{position}, email=#{email}, address=#{address}
+		where id=#{id}
+	</update>
+	<delete id="deleteUser" parameterType="String">
+		delete from user where id=#{id}
+	</delete>
+
+	<!-- Grant Authority -->
+	<insert id="grantAutorities" parameterType="UserDto">
+		insert into authority (id, authorities)
+		values (#{id}, #{authorities})
+	</insert>
+	<update id="updateAuthorities" parameterType="UserDto">
+		update authorities set authorities=#{authorities}
+		where id=#{id}
+	</update>
+
+	<!-- Complex USER -->
+	<select id="loginUser" parameterType="String" resultType="Map">
+		select
+		u.id as username, u.password, u.enabled, u.name , u.position, a.authorities as authority
+		from user u, authority a
+		where u.id=#{username}
+		group by u.id
+	</select>
+	
+	<select id="searchUsersById" parameterType="String" resultType="UserDto">
+		select id, user_urlpath from user
+		where id like #{search}
+		limit 0, 10;
+	</select>
+</mapper>
