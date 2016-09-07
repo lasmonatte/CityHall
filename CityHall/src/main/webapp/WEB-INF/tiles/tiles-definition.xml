@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- 일단 TilesViewResolver 를 등록시킨 상황 controller땅에서 돌려주는 String값을 캐치해서 해당 뷰가 
+	있다면 작동을 시킬수 있을텐데 그때 사용되는 이름값들 설정해두는 파일(tiles-config.xml) -->
+	
+<tiles-definitions>
+	<definition name="defaultTemplate" template="/WEB-INF/tiles/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="nav" value="/WEB-INF/tiles/nav.jsp" />
+		<put-attribute name="left" value="/WEB-INF/tiles/left.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+	
+	<definition name="t:*" extends="defaultTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>
+	</definition>
+	<definition name="t:*/*" extends="defaultTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="t:*/*/*" extends="defaultTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+	</definition>
+</tiles-definitions>
