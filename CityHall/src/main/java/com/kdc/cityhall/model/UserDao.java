@@ -11,12 +11,15 @@ public interface UserDao {
 	public int updateUser(UserDto dto);
 	public int deleteUser(String id);
 
-	//grant Authorities
+	//Grant Authorities
 	public int grantAuthorities(UserDto dto);
 	public int updateAuthorities(UserDto dto);
 	
 	//Complex
 	public UserDetailsVO loginUser(String username);
 	public List<UserDto> searchUsersById(String id);
+	
+	//Update Latest_date
+	public int updateLatestDate(String id);
 	
 }

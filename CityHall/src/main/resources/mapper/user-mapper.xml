@@ -41,10 +41,16 @@
 		where u.id=#{username}
 		group by u.id
 	</select>
-	
 	<select id="searchUsersById" parameterType="String" resultType="UserDto">
 		select id, user_urlpath from user
 		where id like #{search}
 		limit 0, 10;
 	</select>
+	
+	<!-- Login Timestamp -->
+	<update id="updateLatestDate" parameterType="String">
+		update user set
+		latest_date=current_timestamp()
+		where id=#{id}
+	</update>
 </mapper>

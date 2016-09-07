@@ -21,7 +21,7 @@
 	   				username-parameter="id" password-parameter="password" />
 	   	<logout delete-cookies="true" logout-success-url="/user/login" logout-url="/user/logout" invalidate-session="true"/>
 		<session-management invalid-session-url="/user/login">
- 			<concurrency-control max-sessions="1" expired-url="/login"/>
+ 			<concurrency-control max-sessions="1" expired-url="/user/login"/>
 		</session-management>
 	</http> 
 

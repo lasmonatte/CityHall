@@ -19,7 +19,6 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int createUser(UserDto dto) {
 		// TODO Auto-generated method stub
-		System.out.println(dto.getName());
 		return session.insert("kdc.user.createUser", dto);
 	}
 
@@ -63,6 +62,12 @@ public class UserDaoImpl implements UserDao {
 	public int updateAuthorities(UserDto dto) {
 		// TODO Auto-generated method stub
 		return session.update("kdc.user.updateAuthorities", dto);
+	}
+
+	@Override
+	public int updateLatestDate(String id) {
+		// TODO Auto-generated method stub
+		return session.update("kdc.user.updateLatestDate", id);
 	}
 
 }
