@@ -43,6 +43,8 @@
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
 		<typeAlias type="java.lang.String" alias="String"/>
 		<typeAlias type="java.util.Map" alias="Map"/>
-		<typeAlias type="com.kdc.cityhall.model.UserDto" alias="UserDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.UserDto" alias="UserDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.AdvertisementDto" alias="AdvertisementDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.AdvertiserDto" alias="AdvertiserDto"/>
 	</typeAliases>
 </configuration>

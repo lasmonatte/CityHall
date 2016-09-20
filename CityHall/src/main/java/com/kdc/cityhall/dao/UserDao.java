@@ -1,7 +1,8 @@
-package com.kdc.cityhall.model;
+package com.kdc.cityhall.dao;
 
 import java.util.List;
 
+import com.kdc.cityhall.dto.UserDto;
 import com.kdc.cityhall.security.UserDetailsVO;
 
 public interface UserDao {

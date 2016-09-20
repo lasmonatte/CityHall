@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kdc.cityhall.model.UserDto;
-import com.kdc.cityhall.model.UserService;
+import com.kdc.cityhall.dto.UserDto;
+import com.kdc.cityhall.service.UserService;
 
 @Controller
 public class UserController {

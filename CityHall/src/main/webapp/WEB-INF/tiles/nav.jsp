@@ -2,6 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<div>
-	<h1>nav!</h1>
+<div id="div_nav">
+ 
+
+<nav id="nav-1" class="top_nav">
+  <a class="link-1" href="#">메인</a>
+  <a class="link-1" href="#">정보관리</a>
+</nav>
+
 </div>

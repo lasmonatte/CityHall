@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.advertisement">
+	
+	<!-- CRUD Advertisement -->
+	<insert id="createAdvertisement" parameterType="AdvertisementDto">
+		insert into advertisement(c_num, market_num)
+		values (#{c_num}, #{market_num})
+	</insert>
+	<select id="readAdvertisementAll" resultType="AdvertisementDto">
+		select * from advertisement	
+	</select>
+	<select id="readAdvertisementOne" parameterType="Integer" resultType="AdvertisementDto">
+		select * from advertisement	where num=#{num}
+	</select>
+	<select id="readAdvertisementByContractNum" parameterType="Integer" resultType="AdvertisementDto">
+		select * from advertisement	where c_num=#{c_num}
+	</select>
+	<update id="updateAdvertisement" parameterType="AdvertisementDto">
+		update advertisement set isSent=#{isSent} and
+		date_start=#{date_start} and date_end=#{date_end}
+		where num=#{num}
+	</update>
+	<delete id="deleteAdvertisement" parameterType="int">
+		delete from advertisement where num=#{num}
+	</delete>
+	<delete id="deleteAdvertisementByContractNum" parameterType="int">
+		delete from advertisement where c_num=#{c_num}
+	</delete>
+
+
+	<!-- Complex Advertisement -->
+	
+</mapper>

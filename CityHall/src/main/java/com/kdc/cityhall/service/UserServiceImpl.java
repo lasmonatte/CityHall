@@ -1,4 +1,4 @@
-package com.kdc.cityhall.impl;
+package com.kdc.cityhall.service;
 
 import java.util.List;
 
@@ -7,9 +7,8 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.kdc.cityhall.model.UserDao;
-import com.kdc.cityhall.model.UserDto;
-import com.kdc.cityhall.model.UserService;
+import com.kdc.cityhall.dao.UserDao;
+import com.kdc.cityhall.dto.UserDto;
 import com.kdc.cityhall.security.ShaEncoder;
 
 @Component

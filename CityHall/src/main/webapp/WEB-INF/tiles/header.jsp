@@ -3,5 +3,11 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div>
-	<h1>Header!</h1>
+	<div id="header_logo">
+		<img id="h_logo" alt="KDramacity" src="/cityhall/resources/images/logo.png" />
+	</div>
+	<div id="header_userInfo">
+		<sec:authentication property="principal.name"/> <sec:authentication property="principal.position"/>
+		<a href="/cityhall/user/logout"><button type="button">로그아웃</button></a> 
+	</div>
 </div>

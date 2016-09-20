@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.advertiser">
+	
+	<!-- CRUD Advertiser -->
+	<insert id="createAdvertiser" parameterType="AdvertiserDto">
+		insert into advertiser(b_name, register_num, b_type, b_conditions,
+		tel, fax, name, phone, email)
+		values (#{b_name}, #{register_num}, #{b_type}, #{b_conditions},
+		#{tel}, #{fax}, #{name}, #{phone}, #{email})
+	</insert>
+	<select id="readAdvertiserAll" resultType="AdvertiserDto">
+		select * from advertiser	
+	</select>
+	<select id="readAdvertiserOne" parameterType="Integer" resultType="AdvertiserDto">
+		select * from advertiser
+		where num=#{num}
+	</select>
+	<select id="readAdvertiserByBName" parameterType="String" resultType="AdvertiserDto">
+		select * from advertiser
+		where b_name=#{b_name}
+	</select>
+	<select id="readAdvertiserByRegisterNum" parameterType="Integer" resultType="AdvertiserDto">
+		select * from advertiser
+		where register_num=#{register_num}
+	</select>
+	<update id="updateAdvertiser" parameterType="AdvertiserDto">
+		update Advertiser set
+		b_name=#{b_name} and register_num=#{register_num} and b_type=#{b_type} and
+		b_conditions=#{b_conditions} and tel=#{tel} and fax=#{fax} and
+		name=#{name} and phone=#{phone} and email=#{email} 
+		where num=#{num}
+	</update>
+	<delete id="deleteAdvertiser" parameterType="int">
+		delete from Advertiser where num=#{num}
+	</delete>
+	<delete id="deleteAdvertiserByRegisterNum" parameterType="int">
+		delete from Advertiser where register_num=#{register_num}
+	</delete>
+	<delete id="deleteAdvertiserByBName" parameterType="String">
+		delete from Advertiser where b_name=#{b_name}
+	</delete>
+
+
+	<!-- Complex Advertiser -->
+	
+</mapper>

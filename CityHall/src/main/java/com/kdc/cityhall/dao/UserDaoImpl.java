@@ -1,4 +1,4 @@
-package com.kdc.cityhall.impl;
+package com.kdc.cityhall.dao;
 
 import java.util.List;
 
@@ -6,15 +6,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.kdc.cityhall.model.UserDao;
-import com.kdc.cityhall.model.UserDto;
+import com.kdc.cityhall.dto.UserDto;
 import com.kdc.cityhall.security.UserDetailsVO;
 
 @Component
 public class UserDaoImpl implements UserDao {
 
-	@Autowired
-	SqlSession session;
+	@Autowired SqlSession session;
 	
 	@Override
 	public int createUser(UserDto dto) {

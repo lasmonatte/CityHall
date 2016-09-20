@@ -1,4 +1,4 @@
-package com.kdc.cityhall.model;
+package com.kdc.cityhall.dto;
 
 import java.sql.Timestamp;
 

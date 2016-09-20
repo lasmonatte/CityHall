@@ -1,6 +1,8 @@
-package com.kdc.cityhall.model;
+package com.kdc.cityhall.service;
 
 import java.util.List;
+
+import com.kdc.cityhall.dto.UserDto;
 
 public interface UserService {
 

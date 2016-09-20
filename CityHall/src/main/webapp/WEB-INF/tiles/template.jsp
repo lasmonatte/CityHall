@@ -9,6 +9,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cityhall</title>
 	<link rel="stylesheet" href="/cityhall/resources/css/tiles/layout_01.css">
+	<link rel="stylesheet" href="/cityhall/resources/css/tiles/header.css">
+	<link rel="stylesheet" href="/cityhall/resources/css/tiles/nav.css">
+	<link rel="stylesheet" href="/cityhall/resources/css/tiles/left.css">
 </head>
 <body>
 	<div id="tiles_header">

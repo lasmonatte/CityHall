@@ -14,7 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import com.kdc.cityhall.model.UserDao;
+import com.kdc.cityhall.dao.UserDao;
 
 public class UserLoginSuccessHandler implements AuthenticationSuccessHandler{
 

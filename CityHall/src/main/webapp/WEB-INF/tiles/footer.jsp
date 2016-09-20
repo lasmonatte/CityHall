@@ -3,5 +3,5 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div>
-	<h1>Footer!</h1>
+	<p>copyright (c) kdramacity all rights reserved.</p>
 </div>
