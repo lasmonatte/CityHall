@@ -44,7 +44,6 @@
 	<select id="searchUsersById" parameterType="String" resultType="UserDto">
 		select id, user_urlpath from user
 		where id like #{search}
-		limit 0, 10;
 	</select>
 	
 	<!-- Login Timestamp -->

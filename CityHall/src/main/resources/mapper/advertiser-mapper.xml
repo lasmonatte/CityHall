@@ -21,7 +21,7 @@
 	</select>
 	<select id="readAdvertiserByBName" parameterType="String" resultType="AdvertiserDto">
 		select * from advertiser
-		where b_name=#{b_name}
+		where id like #{search}
 	</select>
 	<select id="readAdvertiserByRegisterNum" parameterType="Integer" resultType="AdvertiserDto">
 		select * from advertiser
