@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.market">
+	
+	<!-- CRUD Market -->
+	<insert id="createMarket" parameterType="MarketDto">
+		insert into market(name, register_num, status, asso_name, asso_rep,
+		asso_phone, tel, addr_num, addr_full, shops, visitors,
+		man_name, man_email, man_phone)
+		values(#{name}, #{register_num}, #{status}, #{asso_name}, #{asso_rep},
+		#{asso_phone}, #{tel}, #{addr_num}, #{addr_full}, #{shops}, #{visitors},
+		#{man_name}, #{man_email}, #{man_phone})
+	</insert>
+	<select id="readMarketAll" resultType="MarketDto">
+		select * from market
+	</select>
+	<select id="readMarketOne" parameterType="Integer" resultType="MarketDto">
+		select * from market
+		where num=#{num}
+	</select>
+	<select id="readMarketByRegisterNum" parameterType="Integer" resultType="MarketDto">
+		select * from market
+		where register_num=#{register_num}
+	</select>
+	<select id="readMarketByName" parameterType="String" resultType="MarketDto">
+		select * from market
+		where name like #{name}
+	</select>
+	<update id="updateMarket" parameterType="MarketDto">
+		update market set
+		name=#{name} and register_num=#{register_num} and status=#{status} and
+		asso_name=#{asso_name} and asso_rep=#{asso_rep} and asso_phone=#{asso_phone} and
+		tel=#{tel} and addr_num=#{addr_num} and addr_full=#{addr_full} and shops=#{shops} and
+		visitors=#{visitors} and man_name=#{man_name} and man_email=#{man_email} and man_phone=#{man_phone}
+		where num=#{num}
+	</update>
+	<delete id="deleteMarket" parameterType="Integer">
+		delete from market where num=#{num}
+	</delete>
+	<delete id="deleteMarketByName" parameterType="String">
+		delete from market where name=#{name}
+	</delete>
+	<delete id="deleteMarketByRegisterNum" parameterType="Integer">
+		delete from market where register_num=#{register_num}
+	</delete>
+
+	<!-- Complex Market -->
+</mapper>

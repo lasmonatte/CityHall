@@ -34,10 +34,10 @@
 		name=#{name} and phone=#{phone} and email=#{email} 
 		where num=#{num}
 	</update>
-	<delete id="deleteAdvertiser" parameterType="int">
+	<delete id="deleteAdvertiser" parameterType="Integer">
 		delete from Advertiser where num=#{num}
 	</delete>
-	<delete id="deleteAdvertiserByRegisterNum" parameterType="int">
+	<delete id="deleteAdvertiserByRegisterNum" parameterType="Integer">
 		delete from Advertiser where register_num=#{register_num}
 	</delete>
 	<delete id="deleteAdvertiserByBName" parameterType="String">

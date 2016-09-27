@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.display">
+	
+	<!-- CRUD Display -->
+	<insert id="createDisplay" parameterType="DisplayDto">
+		insert into display(market_num, size, name, serial,
+		maker, date_prod, model, date_install)
+		values (#{market_num}, #{size}, #{name}, #{serial},
+		#{maker}, #{date_prod}, #{model}, #{date_install})
+	</insert>
+	<select id="readDisplayAll" resultType="DisplayDto">
+		select * from display
+	</select>
+	<select id="readDisplayOne" parameterType="Integer" resultType="DisplayDto">
+		select * from display
+		where num=#{num}
+	</select>
+	<select id="readDisplayByMarketNum" parameterType="Integer" resultType="DisplayDto">
+		select * from display
+		where market_num=#{market_num}
+	</select>
+	<select id="readDisplayByName" parameterType="String" resultType="DisplayDto">
+		select * from display
+		where name like #{search}
+	</select>
+	<select id="readDisplayBySize" parameterType="Integer" resultType="DisplayDto">
+		select * from display
+		where size=#{size}
+	</select>
+	<update id="updateDisplay" parameterType="DisplayDto">
+		update display set
+		market_num=#{market_num} and size=#{size} and name=#{name} and serial=#{serial} and
+		maker=#{maker} and date_prod=#{date_prod} and model=#{model} and date_install=#{date_install}
+		where num=#{num}
+	</update>
+	<delete id="deleteDisplay" parameterType="Integer">
+		delete from display where num=#{num}
+	</delete>
+	<delete id="deleteDisplayByMarketNum" parameterType="Integer">
+		delete from display where market_num=#{market_num}
+	</delete>
+	<delete id="deleteDisplayByName" parameterType="String">
+		delete from display where name=#{name}
+	</delete>
+
+
+	<!-- Complex Display -->
+	
+</mapper>

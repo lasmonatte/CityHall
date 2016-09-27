@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.paymentLog">
+	
+	<!-- CRUD PaymentLog -->
+	<insert id="createPaymentLog" parameterType="PaymentLogDto">
+		insert into payment_log(payment_log_num, isPaid, date_paid)
+		values(#{payment_log_num}, #{isPaid}, #{date_paid})
+	</insert>
+	<select id="readPaymentLogAll" resultType="PaymentLogDto">
+		select * from payment_log
+	</select>
+	<select id="readPaymentLogOne" parameterType="Integer" resultType="PaymentLogDto">
+		select * from payment_log
+		where num=#{num}
+	</select>
+	<select id="readPaymentLogByPaymentNum" parameterType="Integer" resultType="PaymentLogDto">
+		select * from payment_log
+		where payment_num=#{payment_num}
+	</select>
+	<select id="readPaymentLogByIsPaid" parameterType="Boolean" resultType="PaymentLogDto">
+		select * from payment_log
+		where isPaid=#{isPaid}
+	</select>
+	<update id="updatePaymentLog" parameterType="PaymentLogDto">
+		update payment_log set
+		payment_num=#{payment_num} and isPaid=#{isPaid} and date_paid=#{isPaid}
+		where num=#{num}
+	</update>
+	<delete id="deletePaymentLog" parameterType="Integer">
+		delete from payment_log where num=#{num}
+	</delete>
+	<delete id="deletePaymentLogByPaymentNum" parameterType="Integer">
+		delete from payment_log where payment_num=#{payment_num}
+	</delete>
+
+	<!-- Complex PaymentLog -->
+</mapper>

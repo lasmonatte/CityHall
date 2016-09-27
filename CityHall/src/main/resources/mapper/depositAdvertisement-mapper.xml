@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.depositAdvertisement">
+	
+	<!-- CRUD DepositAdvertisement -->
+	<insert id="createDepositAdvertisement" parameterType="DepositAdvertisementDto">
+		insert into deposit_advertisement(advertiser_num, c_num, date_deposit, money, isDeposit)
+		values (#{advertiser_num}, #{c_num}, #{date_deposit}, #{money}, #{isDeposit})
+	</insert>
+	<select id="readDepositAdvertisementAll" resultType="DepositAdvertisementDto">
+		select * from deposit_advertisement	
+	</select>
+	<select id="readDepositAdvertisementOne" parameterType="Integer" resultType="DepositAdvertisementDto">
+		select * from deposit_advertisement
+		where num=#{num}
+	</select>
+	<select id="readDepositAdvertisementByAdvertiserNum" parameterType="Integer" resultType="DepositAdvertisementDto">
+		select * from deposit_advertisement
+		where advertiser_num=#{advertiser_num}
+	</select>
+	<select id="readDepositAdvertisementByContractNum" parameterType="Integer" resultType="DepositAdvertisementDto">
+		select * from deposit_advertisement
+		where c_num=#{c_num}
+	</select>
+	<update id="updateDepositAdvertisement" parameterType="DepositAdvertisementDto">
+		update deposit_advertisement set
+		advertiser_num=#{advertiser_num} and c_num=#{c_num} and
+		date_deposit=#{date_deposit} and money=#{money} and isDeposit=#{isDeposit} 
+		where num=#{num}
+	</update>
+	<delete id="deleteDepositAdvertisement" parameterType="Integer">
+		delete from deposit_advertisement where num=#{num}
+	</delete>
+	<delete id="deleteDepositAdvertisementByAdvertiserNum" parameterType="Integer">
+		delete from deposit_advertisement where advertiser_num=#{advertiser_num}
+	</delete>
+	<delete id="deleteDepositAdvertisementByContractNum" parameterType="Integer">
+		delete from deposit_advertisement where c_num=#{c_num}
+	</delete>
+
+
+	<!-- Complex DepositAdvertisement -->
+	
+</mapper>

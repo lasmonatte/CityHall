@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.contractMarket">
+	
+	<!-- CRUD ContractMarket -->
+	<insert id="createContractMarket" parameterType="ContractMarketDto">
+		insert into contract_market
+		(market_num, date_cont, date_exp, period, display_proc, display_new,
+		isMusic, isCalander, isOperation, realPath, urlPath, fare_elec, fare_comm)
+		values
+		(#{market_num}, #{date_cont}, #{date_exp}, #{period}, #{display_proc}, #{display_new},
+		#{isMusic}, #{isCalander}, #{isOperation}, #{realPath}, #{urlPath}, #{fare_elec}, #{fare_comm})	
+	</insert>
+	<select id="readContractMarketAll" resultType="ContractMarketDto">
+		select * from contract_market	
+	</select>
+	<select id="readContractMarketOne" parameterType="Integer" resultType="ContractMarketDto">
+		select * from contract_market
+		where num=#{num}
+	</select>
+	<select id="readContractMarketByMarketNum" parameterType="Integer" resultType="ContractMarketDto">
+		select * from contract_market
+		where market_num=#{market_num}
+	</select>
+	<update id="updateContractMarket" parameterType="ContractMarketDto">
+		update contract_market set
+		market_num=#{market_num} and date_cont=#{date_cont} and date_exp=#{date_exp} and
+		period=#{period} and display_proc=#{display_proc} and display_new=#{display_new} and
+		isMusic=#{isMusic} and isCalander=#{isCalander} and isOperation=#{isOperation} and
+		realPath=#{realPath} and urlPath=#{urlPath} and fare_elec=#{fare_elec} and fare_comm=#{fare_comm} 
+		where num=#{num}
+	</update>
+	<delete id="deleteContractMarket" parameterType="Integer">
+		delete from contract_market where num=#{num}
+	</delete>
+	<delete id="deleteContractMarketByMarketNum" parameterType="Integer">
+		delete from contract_market where market_num=#{market_num}
+	</delete>
+
+
+	<!-- Complex ContractMarket -->
+	
+</mapper>

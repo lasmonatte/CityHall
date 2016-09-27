@@ -42,9 +42,18 @@
 	<typeAliases>
 		<typeAlias type="java.lang.Integer" alias="Integer"/>
 		<typeAlias type="java.lang.String" alias="String"/>
+		<typeAlias type="java.lang.Boolean" alias="Boolean"/>
 		<typeAlias type="java.util.Map" alias="Map"/>
 		<typeAlias type="com.kdc.cityhall.dto.UserDto" alias="UserDto"/>
 		<typeAlias type="com.kdc.cityhall.dto.AdvertisementDto" alias="AdvertisementDto"/>
 		<typeAlias type="com.kdc.cityhall.dto.AdvertiserDto" alias="AdvertiserDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.ContractAdvertisementDto" alias="ContractAdvertisementDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.ContractMarketDto" alias="ContractMarketDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.DepositAdvertisementDto" alias="DepositAdvertisementDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.DisplayDto" alias="DisplayDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.LogDto" alias="LogDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.MarketDto" alias="MarketDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.PaymentDto" alias="PaymentDto"/>
+		<typeAlias type="com.kdc.cityhall.dto.PaymentLogDto" alias="PaymentLogDto"/>
 	</typeAliases>
 </configuration>

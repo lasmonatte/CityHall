@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="/cityhall/resources/css/tiles/header.css">
 	<link rel="stylesheet" href="/cityhall/resources/css/tiles/nav.css">
 	<link rel="stylesheet" href="/cityhall/resources/css/tiles/left.css">
+	<link rel="stylesheet" href="/cityhall/resources/css/table.css">
 </head>
 <body>
 	<div id="tiles_header">

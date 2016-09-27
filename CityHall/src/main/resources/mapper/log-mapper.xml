@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.log">
+	
+	<!-- CRUD Log -->
+	<insert id="createLog" parameterType="LogDto">
+		insert into log(tbl_name, tbl_pk, date_reg,
+		reg_id, reg_name, reg_position, message)
+		values (#{tbl_name}, #{tbl_pk}, #{date_reg},
+		#{reg_id}, #{reg_name}, #{reg_position}, #{reg_message})
+	</insert>
+	<select id="readLogAll" resultType="LogDto">
+		select * from log
+	</select>
+	<select id="readLogOne" parameterType="Integer" resultType="LogDto">
+		select * from log
+		where num=#{num}
+	</select>
+	<select id="readLogById" parameterType="String" resultType="LogDto">
+		select * from log
+		where reg_id by #{reg_id}
+	</select>
+	<update id="updateLog" parameterType="LogDto">
+		update log set
+		tbl_name=#{tbl_name} and tbl_pk=#{tbl_pk} and date_reg=#{date_reg} and
+		reg_id=#{reg_id} and reg_name=#{reg_name} and reg_position=#{reg_position} and
+		message=#{message}
+		where num=#{num}
+	</update>
+	<delete id="deleteLog" parameterType="Integer">
+		delete from log where num=#{num}
+	</delete>
+	<delete id="deleteLogById" parameterType="String">
+		delete from log where id=#{id}
+	</delete>
+
+
+	<!-- Complex Log -->
+	<!-- 
+		1. 테이블의 특정 부분에서 조회
+		2. 날짜별 조회
+		3. 직위별 조회
+	-->
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.contractAdvertisement">
+	
+	<!-- CRUD ContractAdvertisement -->
+	<insert id="createContractAdvertisement" parameterType="ContractAdvertisementDto">
+		insert into contract_advertisement
+		(advertiser_num, name, type, period, counts, sum, cost, value, total, discount,
+		plan, date_cont, deposit, balance, total_times, current_times, money, due_day, seller_id)
+		values
+		(#{advertiser_num}, #{name}, #{type}, #{period}, #{counts}, #{sum}, #{cost}, #{value}, #{total}, #{discount},
+		#{plan}, #{date_cont}, #{deposit}, #{balance}, #{total_times}, #{current_times}, #{money}, #{due_day}, #{seller_id})
+	</insert>
+	<select id="readContractAdvertisementAll" resultType="ContractAdvertisementDto">
+		select * from contract_advertisement	
+	</select>
+	<select id="readContractAdvertisementOne" parameterType="Integer" resultType="ContractAdvertisementDto">
+		select * from contract_advertisement
+		where num=#{num}
+	</select>
+	<select id="readContractAdvertisementByAdvertiserNum" parameterType="Integer" resultType="ContractAdvertisementDto">
+		select * from contract_advertisement
+		where adveritser_num=#{advertiser_num}
+	</select>
+	<select id="readContractAdvertisementBySellerId" parameterType="String" resultType="ContractAdvertisementDto">
+		select * from contract_advertisement
+		where seller_id=#{seller_id}
+	</select>
+	<update id="updateContractAdvertisement" parameterType="ContractAdvertisementDto">
+		update contract_advertisement set
+		advertiser_num=#{advertiser_num} and name=#{name} and type=#{type} and period=#{period} and counts=#{counts} and
+		sum=#{sum} and cost=#{cost} and value=#{value} and total=#{total} and discount=#{discount} and plan=#{plan} and
+		date_cont=#{date_cont} and deposit=#{deposit} and balance=#{balance} and total_times=#{total_times} and
+		current_times=#{current_times} and money=#{money} and due_day=#{due_day} and seller_id=#{seller_id} 
+		where num=#{num}
+	</update>
+	<delete id="deleteContractAdvertisement" parameterType="Integer">
+		delete from contract_advertisement where num=#{num}
+	</delete>
+	<delete id="deleteContractAdvertisementByAdvertiserNum" parameterType="Integer">
+		delete from contract_advertisement where advertiser_num=#{advertiser_num}
+	</delete>
+	<delete id="deleteContractAdvertisementBySellerId" parameterType="String">
+		delete from ContractAdvertisement where seller_id=#{seller_id}
+	</delete>
+
+
+	<!-- Complex ContractAdvertisement -->
+	
+</mapper>

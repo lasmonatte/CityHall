@@ -7,8 +7,10 @@
 		<li class="active">
 			<h3><span class="icon-market"></span>전 통 시 장</h3>
 			<ul>
-				<li><a href="#">시장 등록</a></li>
-				<li><a href="#">시장 조회</a></li>
+				<li><a href="/cityhall/market/m_registration">시장 등록</a></li>
+				<li><a href="/cityhall/market/m_listAll">전체 시장 조회</a></li>
+				<li><a href="/cityhall/market/c_registration">계약 등록</a></li>
+				<li><a href="/cityhall/market/c_listAll">계약 조회</a></li>
 			</ul>
 		</li>
 		<!-- we will keep this LI open by default -->
@@ -22,14 +24,14 @@
 		<li>
 			<h3><span class="icon-display"></span>전 광 판</h3>
 			<ul>
-				<li><a href="#">전광판 등록</a></li>
-				<li><a href="#">전광판 조회</a></li>
+				<li><a href="/cityhall/display/registration">전광판 등록</a></li>
+				<li><a href="/cityhall/display/inquiry">전광판 조회</a></li>
 			</ul>
 		</li>
 		<li>
 			<h3><span class="icon-ad"></span>광 고 관 련</h3>
 			<ul>
-				<li><a href="#">광고주 등록</a></li>
+				<li><a href="/cityhall/advertiser/registration">광고주 등록</a></li>
 				<li><a href="#">광고주 조회</a></li>
 				<li><a href="#">광고 등록</a></li>
 				<li><a href="#">광고 조회</a></li>

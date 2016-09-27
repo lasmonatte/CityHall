@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="kdc.payment">
+	
+	<!-- CRUD Payment -->
+	<insert id="createPayment" parameterType="PaymentDto">
+		insert into payment(market_num, category, company_name, money,
+		account_name, account_number, account_bank,
+		period, due_day, reg_date)
+		values(#{market_num}, #{category}, #{company_name}, #{money},
+		#{account_name}, #{acount_number}, #{account_bank},
+		#{period}, #{due_day}, #{reg_date})
+	</insert>
+	<select id="readPaymentAll" resultType="PaymentDto">
+		select * from payment
+	</select>
+	<select id="readPaymentOne" parameterType="Integer" resultType="PaymentDto">
+		select * from payment
+		where num=#{num}
+	</select>
+	<select id="readPaymentByMarketNum" parameterType="Integer" resultType="PaymentDto">
+		select * from payment
+		where market_num=#{market_num}
+	</select>
+	<select id="readPaymentByCategory" parameterType="String" resultType="PaymentDto">
+		select * from payment
+		where category=#{category}
+	</select>
+	<select id="readPaymentByCompanyName" parameterType="String" resultType="PaymentDto">
+		select * from payment
+		where company_name like #{company_name}
+	</select>
+	<update id="updatePayment" parameterType="PaymentDto">
+		update payment set
+		market_num=#{market_num} and category=#{category} and company_name=#{company_name} and
+		money=#{money} and account_name=#{account_name} and account_number=#{account_number} and
+		account_bank=#{account_bank} and period=#{period} and due_day=#{due_day} and reg_date=#{reg_date}
+		where num=#{num}
+	</update>
+	<delete id="deletePayment" parameterType="Integer">
+		delete from payment where num=#{num}
+	</delete>
+	<delete id="deletePaymentByMarketNum" parameterType="Integer">
+		delete from payment where market_num=#{market_num}
+	</delete>
+	<delete id="deletePaymentByCompanyName" parameterType="String">
+		delete from payment where company_name=#{company_name}
+	</delete>
+
+	<!-- Complex Payment -->
+</mapper>
