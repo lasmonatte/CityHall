@@ -1,21 +1,21 @@
-#tbl table { 
+.contents table { 
 	width: 90%; 
 	border-collapse: collapse; 
 	margin:50px auto;
 	}
 
 /* Zebra striping */
-#tbl tr:nth-of-type(odd) { 
+.contents tr:nth-of-type(odd) { 
 	background: #eee; 
 	}
 
-#tbl th { 
+.contents th { 
 	background: #3498db; 
 	color: white; 
 	font-weight: bold; 
 	}
 
-#tbl td, th { 
+.contents td, th { 
 	padding: 10px; 
 	border: 1px solid #ccc; 
 	text-align: center; 
@@ -31,25 +31,25 @@ and also iPads specifically.
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-	#tbl table { 
+	.contents table { 
 	  	width: 100%; 
 	}
 
 	Force table to not be like tables anymore
-	#tbl table, thead, tbody, th, td, tr { 
+	.contents table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
 	
 	Hide table headers (but not display: none;, for accessibility)
-	#tbl thead tr { 
+	.contents thead tr { 
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
 	
-	#tbl tr { border: 1px solid #ccc; }
+	.contents tr { border: 1px solid #ccc; }
 	
-	#tbl td { 
+	.contents td { 
 		Behave  like a "row"
 		border: none;
 		border-bottom: 1px solid #eee; 
@@ -57,7 +57,7 @@ only screen and (max-width: 760px),
 		padding-left: 50%; 
 	}
 
-	#tbl td:before { 
+	.contents td:before { 
 		Now like a table header
 		position: absolute;
 		Top/left values mimic padding

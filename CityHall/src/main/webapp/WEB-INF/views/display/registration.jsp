@@ -4,7 +4,7 @@
 
 <div>
 	<span>전광판 등록</span>
-	<div id="tbl">
+	<div class="contents">
 		<table>
 			<tr>
 				<th>종류</th>

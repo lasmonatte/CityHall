@@ -4,7 +4,7 @@
 
 <div>
 	<span>전광판 조회</span>
-	<div id="tbl">
+	<div class="contents">
 		<table>
 			<tr>
 				<th>종류</th>

@@ -3,52 +3,43 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div>
-	<span>전통시장 정보 등록</span>
-	<div id="tbl">
+	<span>시장 계약 정보 등록</span>
+	<div class="contents">
 		<table>
 			<tr>
-				<th>시장명</th>
-				<td><input type="text" name="name" /></td>
-				<th>사업자 등록번호</th>
-				<td><input type="text" name="register_num" /></td>
-				<th>상태</th>
-				<td>dto.status 리스트</td>
+				<th>시작일자</th>
+				<td>dto.date_start</td>
+				<th>종료일자</th>
+				<td>dto.date_end</td>
+				<th>계약기간</th>
+				<td>dto.period</td>
 			</tr>
 			<tr>
-				<th>조합명</th>
-				<td><input type="text" name="asso_name" /></td>
-				<th>조합장</th>
-				<td><input type="text" name="asso_rep" /></td>
-				<th>조합장 연락처</th>
-				<td><input type="text" name="asso_phone" /></td>
+				<th>신규 전광판</th>
+				<td>dto.display_new</td>
+				<th>대행 전광판</th>
+				<td>dto.display_proc</td>
 			</tr>
 			<tr>
-				<th>조합 전화번호</th>
-				<td><input type="text" name="tel" /></td>
-				<th>주소</th>
-				<td>addr_db 시도 리스트</td>
-				<td>addr_db 시군구 리스트</td>
-				<td><input type="text" name="addr_full" /></td>
+				<th>음악방송</th>
+				<td>dto.isMusic</td>
+				<th>캘린더</th>
+				<td>dto.isCalander</td>
+				<th>운영비</th>
+				<td>dto.isOperation</td>
 			</tr>
+			<!-- 
+				IF dto.isOperation == true
 			<tr>
-				<th>점포수</th>
-				<td><input type="text" name="shops" /></td>
-				<th>방문자수</th>
-				<td><input type="text" name="visitors" /></td>
-			<!--
-				* DB 입력 기본값이 current_timestamp()이므로
-					등록 화면에서 굳이 표시할 필요가 없을듯
-			 	<th>등록일자</th>
-				<td>dto.date_reg 날짜선택</td>
-				 -->
+				<th>전기료</th>
+				<td>dto.fare_elec</td>
+				<th>통신비</th>
+				<td>dto.fare_comm</td>			
 			</tr>
+			 -->
 			<tr>
-				<th>담당자</th>
-				<td><input type="text" name="man_name" /></td>
-				<th>담당자 이메일</th>
-				<td><input type="text" name="man_email" /></td>
-				<th>담당자 연락처</th>
-				<td><input type="text" name="man_phone" /></td>
+				<th>파일 업로드</th>
+				<td>업로드 버튼</td>
 			</tr>
 			<!-- 조회때 추가
 			<tr>

@@ -11,14 +11,15 @@
 				<li><a href="/cityhall/market/m_listAll">전체 시장 조회</a></li>
 				<li><a href="/cityhall/market/c_registration">계약 등록</a></li>
 				<li><a href="/cityhall/market/c_listAll">계약 조회</a></li>
+				<li><a href="/cityhall/market/c_inquiry">계약 상세 조회(임시)</a></li>
 			</ul>
 		</li>
 		<!-- we will keep this LI open by default -->
 		<li>
 			<h3><span class="icon-addService"></span>부 가 서 비 스</h3>
 			<ul>
-				<li><a href="#">부가서비스 등록</a></li>
-				<li><a href="#">부가서비스 조회</a></li>
+				<li><a href="/cityhall/common_table">부가서비스 등록</a></li>
+				<li><a href="/cityhall/common_reg">부가서비스 조회</a></li>
 			</ul>
 		</li>
 		<li>

@@ -16,55 +16,55 @@ public class MarketDaoImpl implements MarketDao{
 	@Override
 	public int createMarket(MarketDto dto) {
 		// TODO Auto-generated method stub
-		return session.insert("com.kdc.createMarket", dto);
+		return session.insert("kdc.market.createMarket", dto);
 	}
 
 	@Override
 	public List<MarketDto> readMarketAll() {
 		// TODO Auto-generated method stub
-		return session.selectList("com.kdc.readMarketAll");
+		return session.selectList("kdc.market.readMarketAll");
 	}
 
 	@Override
 	public MarketDto readMarketOne(int num) {
 		// TODO Auto-generated method stub
-		return session.selectOne("com.kdc.readMarketOne", num);
+		return session.selectOne("kdc.market.readMarketOne", num);
 	}
 
 	@Override
 	public MarketDto readMarketByRegisterNum(int register_num) {
 		// TODO Auto-generated method stub
-		return session.selectOne("com.kdc.readMarketByRegisterNum", register_num);
+		return session.selectOne("kdc.market.readMarketByRegisterNum", register_num);
 	}
 
 	@Override
 	public List<MarketDto> readMarketByName(String name) {
 		// TODO Auto-generated method stub
-		return session.selectList("com.kdc.readMarketByName", name);
+		return session.selectList("kdc.market.readMarketByName", name);
 	}
 
 	@Override
 	public int updateMarket(MarketDto dto) {
 		// TODO Auto-generated method stub
-		return session.update("com.kdc.updateMarket", dto);
+		return session.update("kdc.market.updateMarket", dto);
 	}
 
 	@Override
 	public int deleteMarket(int num) {
 		// TODO Auto-generated method stub
-		return session.delete("com.kdc.deleteMarket", num);
+		return session.delete("kdc.market.deleteMarket", num);
 	}
 
 	@Override
 	public int deleteMarketByName(String name) {
 		// TODO Auto-generated method stub
-		return session.delete("com.kdc.deleteMarketByName", name);
+		return session.delete("kdc.market.deleteMarketByName", name);
 	}
 
 	@Override
 	public int deleteMarketByRegisterNum(int register_num) {
 		// TODO Auto-generated method stub
-		return session.delete("com.kdc.deleteMarketByRegisterNum", register_num);
+		return session.delete("kdc.market.deleteMarketByRegisterNum", register_num);
 	}
 	
 }

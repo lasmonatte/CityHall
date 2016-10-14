@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<div>
-	<span>전통시장 정보 조회</span>
-	<div id="tbl">
+<div class="contents">
+	<div>
+		<span>조회</span>
+	</div>
+	<div>
 		<table>
 			<tr>
 				<th>시장명</th>
@@ -44,7 +47,10 @@
 				<th>담당자 연락처</th>
 				<td>dto.man_phone</td>
 			</tr>
-			<!-- 조회때 추가
+		</table>
+	</div>
+	<div>
+		<table>
 			<tr>
 				<th colspan=6>기    록</th>
 			</tr>
@@ -56,10 +62,6 @@
 			<tr>
 				<td colspan=6>LogDto.message</td>
 			</tr>
-			-->
 		</table>
-		<div>
-			<input type="submit" value="등록" />
-		</div>
 	</div>
 </div>

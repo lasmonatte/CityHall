@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ include file="m_inquiry.jsp" %>
 
 <div>
-	<span>전통시장 정보 조회</span>
-	<div id="tbl">
+	<div class="contents">
+		<span>계약 정보</span>
 		<table>
 			<tr>
 				<th>시작일자</th>
@@ -37,26 +38,44 @@
 				<td>dto.fare_comm</td>			
 			</tr>
 			 -->
-			<tr>
-				<th>파일 업로드</th>
-				<td>업로드 버튼</td>
-			</tr>
-			<!-- 조회때 추가
-			<tr>
-				<th colspan=6>기    록</th>
-			</tr>
-			<tr>
-				<th>작성자</th>
-				<th colspan=4>내  용</th>
-				<th>작성일자</th>
-			</tr>
-			<tr>
-				<td colspan=6>LogDto.message</td>
-			</tr>
-			-->
 		</table>
-		<div>
-			<input type="submit" value="등록" />
-		</div>
+	</div>
+	<div class="contents">
+		<span>부가서비스 정보</span>
+		<table>
+			<tr>
+				<th>서비스 종류</th>
+				<td>paymentDto.category</td>
+				<th>업체명</th>
+				<td>paymentDto.company_name</td>
+				<th>금액</th>
+				<td>paymentDto.money</td>
+				<th>월 입금일</th>
+				<td>paymentDto.due_day</td>
+			</tr>
+		</table>
+	</div>
+	<div class="contents">
+		<span>전광판 정보</span>
+		<table>
+			<tr>
+				<th>전광판명</th>
+				<td>displayDto.name</td>
+				<th>크기</th>
+				<td>displayDto.size</td>
+				<th>제조사</th>
+				<td>displayDto.maker</td>
+			</tr>
+			<tr>
+				<th>모델명</th>
+				<td>displayDto.model</td>				
+				<th>일련번호</th>
+				<td>displayDto.serial</td>
+				<th>생산일자</th>
+				<td>displayDto.date_prod</td>
+				<th>설치일자</th>
+				<td>displayDto.date_install</td>
+			</tr>
+		</table>
 	</div>
 </div>

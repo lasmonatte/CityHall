@@ -32,7 +32,7 @@ public class PaymentServiceImpl implements PaymentService{
 	}
 
 	@Override
-	public PaymentDto readPaymentByMarketNumService(int market_num) {
+	public List<PaymentDto> readPaymentByMarketNumService(int market_num) {
 		// TODO Auto-generated method stub
 		return dao.readPaymentByMarketNum(market_num);
 	}

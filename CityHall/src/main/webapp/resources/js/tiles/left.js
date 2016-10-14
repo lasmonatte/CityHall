@@ -14,3 +14,9 @@ $(document).ready(function(){
 		}
 	})
 })
+
+
+function test(num){
+	alert(num);
+	location.href="/cityhall/market/m_inquiry?market_num="+num;
+}

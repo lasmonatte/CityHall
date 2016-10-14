@@ -9,7 +9,7 @@ public interface PaymentService {
 	public int createPaymentService(PaymentDto dto);
 	public List<PaymentDto> readPaymentAllService();
 	public PaymentDto readPaymentOneService(int num);
-	public PaymentDto readPaymentByMarketNumService(int market_num);
+	public List<PaymentDto> readPaymentByMarketNumService(int market_num);
 	public List<PaymentDto> readPaymentByCategoryService(String category);
 	public List<PaymentDto> readPaymentByCompanyNameService(String name);
 	public int updatePaymentService(PaymentDto dto);

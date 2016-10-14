@@ -16,60 +16,60 @@ public class DisplayDaoImpl implements DisplayDao{
 	@Override
 	public int createDisplay(DisplayDto dto) {
 		// TODO Auto-generated method stub
-		return session.insert("com.display.createDisplay", dto);
+		return session.insert("kdc.display.createDisplay", dto);
 	}
 
 	@Override
 	public List<DisplayDto> readDisplayAll() {
 		// TODO Auto-generated method stub
-		return session.selectList("com.display.readDisplayAll");
+		return session.selectList("kdc.display.readDisplayAll");
 	}
 
 	@Override
 	public DisplayDto readDisplayOne(int num) {
 		// TODO Auto-generated method stub
-		return session.selectOne("com.display.readDisplayOne", num);
+		return session.selectOne("kdc.display.readDisplayOne", num);
 	}
 
 	@Override
 	public List<DisplayDto> readDisplayByMarketNum(int market_num) {
 		// TODO Auto-generated method stub
-		return session.selectList("com.display.readDisplayByMarketNum", market_num);
+		return session.selectList("kdc.display.readDisplayByMarketNum", market_num);
 	}
 
 	@Override
 	public List<DisplayDto> readDisplayByName(String search) {
 		// TODO Auto-generated method stub
-		return session.selectList("com.display.readDisplayByName", search);
+		return session.selectList("kdc.display.readDisplayByName", search);
 	}
 
 	@Override
 	public List<DisplayDto> readDisplayBySize(int size) {
 		// TODO Auto-generated method stub
-		return session.selectList("com.display.readDisplayBySize", size);
+		return session.selectList("kdc.display.readDisplayBySize", size);
 	}
 
 	@Override
 	public int updateDisplay(DisplayDto dto) {
 		// TODO Auto-generated method stub
-		return session.update("com.display.updateDisplay", dto);
+		return session.update("kdc.display.updateDisplay", dto);
 	}
 
 	@Override
 	public int deleteDisplay(int num) {
 		// TODO Auto-generated method stub
-		return session.delete("com.display.deleteDisplay", num);
+		return session.delete("kdc.display.deleteDisplay", num);
 	}
 
 	@Override
 	public int deleteDisplayByMarketNum(int market_num) {
 		// TODO Auto-generated method stub
-		return session.delete("com.display.deleteDisplayByMarketNum", market_num);
+		return session.delete("kdc.display.deleteDisplayByMarketNum", market_num);
 	}
 
 	@Override
 	public int deleteDisplayByName(String name) {
 		// TODO Auto-generated method stub
-		return session.delete("com.display.deleteDisplayByName", name);
+		return session.delete("kdc.display.deleteDisplayByName", name);
 	}
 }
