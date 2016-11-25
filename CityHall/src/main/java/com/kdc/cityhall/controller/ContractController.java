@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kdc.cityhall.dto.ContractMarketDto;
+
 @Controller
 public class ContractController {
 
@@ -18,4 +20,23 @@ public class ContractController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="market/c_registration", method=RequestMethod.GET)
+	public ModelAndView c_registControl(ModelAndView mav, Authentication auth){
+		
+		mav.setViewName("t:market/c_registration");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="market/c_registration", method=RequestMethod.POST)
+	public ModelAndView c_registrationControl(ModelAndView mav, Authentication auth, ContractMarketDto dto){
+		
+		System.out.println("Come");
+		System.out.println(dto);
+		mav.setViewName("t:market/c_registration");
+		
+		return mav;
+	}
+	
 }
